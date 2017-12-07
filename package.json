@@ -11,7 +11,7 @@
     "url": "https://github.com/100Pals/streamkit"
   },
   "scripts": {
-    "postinstall": "install-app-deps",
+    "postinstall": "electron-builder install-app-deps",
     "start": "npm install && electron .",
     "pack": "build --dir",
     "dist": "build",
@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "electron": "latest",
-    "electron-builder": "latest"
+    "electron-builder": "latest",
+    "electron-builder-squirrel-windows": "^19.48.0"
   }
 }

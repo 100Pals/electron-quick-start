@@ -1,5 +1,6 @@
 
 [![OSX/Linux Builds](https://travis-ci.org/100Pals/streamkit.svg?branch=master)](https://travis-ci.org/100Pals/streamkit)
+[![Windows status](https://ci.appveyor.com/api/projects/status/fcrfr9gimmk3ui4d?svg=true)](https://ci.appveyor.com/project/rgooler/streamkit)
 
 # Setup
 
