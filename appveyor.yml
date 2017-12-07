@@ -7,17 +7,16 @@ platform:
   - x64
 
 cache:
-  - node_modules
-  - '%APPDATA%\npm-cache'
+  - "%LOCALAPPDATA%\\Yarn"
   - '%USERPROFILE%\.electron'
 
 install:
   - ps: Install-Product node 8 x64
   - set CI=true
-  - npm install
+  - yarn install
 
 build_script:
-  - npm run dist
+  - yarn run dist
 
 test: off
 
