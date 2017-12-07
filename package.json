@@ -1,6 +1,7 @@
 {
   "name": "100pals-streamkit",
   "productName": "100Pals Streamkit",
+  "email": "100pals@googlegroups.com",
   "description": "A streaming kit for twitch, youtube, etc for those who like achivement hunting",
   "version": "0.1.0",
   "main": "main.js",
@@ -26,6 +27,7 @@
       ]
     },
     "linux": {
+      "category": "Game",
       "target": [
         "AppImage",
         "deb"
