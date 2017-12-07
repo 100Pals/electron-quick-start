@@ -1,3 +1,16 @@
+# Setup
+
+Only if on OSX:
+    brew cask install xquartz
+    brew install fakeroot dpkg wine
+
+And then:
+    npm install
+    npm start
+
+To build the app, just do:
+    npm run build
+
 ![Electron tutorial app](http://www.christianengvall.se/wp-content/uploads/2017/10/Electron-tutorial-app-github.png "Electron tutorial app")
 # Electron tutorial app
 An electron application for tutorials

@@ -6,6 +6,9 @@ if (setupEvents.handleSquirrelEvent()) {
 }
 
 const electron = require('electron')
+// Set up autoupdater
+import { autoUpdater } from "electron-updater"
+autoUpdater.checkForUpdatesAndNotify() // check for updates on startup
 // Module to control application life.
 const app = electron.app
 const {ipcMain} = require('electron')
