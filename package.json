@@ -1,11 +1,12 @@
 {
   "name": "100pals-streamkit",
   "productName": "100Pals Streamkit",
+  "email": "100pals@googlegroups.com",
   "description": "A streaming kit for twitch, youtube, etc for those who like achivement hunting",
   "version": "0.1.0",
   "main": "main.js",
   "license": "MIT",
-  "author": "100Pals",
+  "author": "100Pals <100pals@googlegroups.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/100Pals/streamkit"
@@ -14,8 +15,8 @@
     "postinstall": "electron-builder install-app-deps",
     "start": "npm install && electron .",
     "pack": "build --dir",
-    "dist": "build --help",
-    "publish": "build --publish onTag"
+    "dist": "build",
+    "publish": "electron-builder --publish always"
   },
   "build": {
     "appId": "com.github.100pals.streamkit",
@@ -26,6 +27,7 @@
       ]
     },
     "linux": {
+      "category": "Game",
       "target": [
         "AppImage",
         "deb"
@@ -49,6 +51,7 @@
   },
   "devDependencies": {
     "electron": "latest",
-    "electron-builder": "latest"
+    "electron-builder": "latest",
+    "electron-builder-squirrel-windows": "^19.48.0"
   }
 }

@@ -1,3 +1,7 @@
+
+[![OSX/Linux Builds](https://travis-ci.org/100Pals/streamkit.svg?branch=master)](https://travis-ci.org/100Pals/streamkit)
+[![Windows status](https://ci.appveyor.com/api/projects/status/fcrfr9gimmk3ui4d?svg=true)](https://ci.appveyor.com/project/rgooler/streamkit)
+
 # Setup
 
 Only if on OSX:
@@ -5,11 +9,11 @@ Only if on OSX:
     brew install fakeroot dpkg wine
 
 And then:
-    npm install
-    npm start
+    yarn install
+    yarn start
 
 To build the app, just do:
-    npm run build
+    yarn run build
 
 ![Electron tutorial app](http://www.christianengvall.se/wp-content/uploads/2017/10/Electron-tutorial-app-github.png "Electron tutorial app")
 # Electron tutorial app

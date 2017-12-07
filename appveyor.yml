@@ -1,0 +1,25 @@
+environment:
+  GH_TOKEN:
+      secure: brOMH+obYMsdPdiisq3gGRL/e9dn1Um73l96c+ZRbnQe1y2h/euUNN20qP4IBird
+  
+  
+platform:
+  - x64
+
+cache:
+  - "%LOCALAPPDATA%\\Yarn"
+  - '%USERPROFILE%\.electron'
+
+install:
+  - ps: Install-Product node 8 x64
+  - set CI=true
+  - yarn install
+
+build_script:
+  - yarn run dist
+
+test: off
+
+version: '{build}'
+shallow_clone: true
+clone_depth: 1
