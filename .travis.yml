@@ -1,8 +1,6 @@
 sudo: required
 dist: trusty
 
-language: c
-
 matrix:
   include:
     - os: osx
