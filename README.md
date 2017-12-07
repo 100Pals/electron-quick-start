@@ -1,3 +1,6 @@
+[![OSX/Linux Builds](https://travis-ci.org/100Pals/streamkit.svg?branch=master)](https://travis-ci.org/100Pals/streamkit)
+
+
 ![Electron tutorial app](http://www.christianengvall.se/wp-content/uploads/2017/10/Electron-tutorial-app-github.png "Electron tutorial app")
 # Electron tutorial app
 An electron application for tutorials
