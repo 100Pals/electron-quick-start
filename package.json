@@ -1,0 +1,28 @@
+{
+  "name": "100Pals_Streamkit",
+  "productName": "100Pals Streamkit",
+  "description": "A streaming kit for twitch, youtube, etc for those who like achivement hunting",
+  "version": "0.1.0",
+  "main": "main.js",
+  "license": "MIT",
+  "author": "100Pals",
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-installer-dmg": "^0.2.1",
+    "electron-packager": "^10.1.0",
+    "electron-winstaller": "^2.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/100Pals/streamkit"
+  },
+  "scripts": {
+    "build": "npm run package-mac package-win package-linux create-installer-mac create-installer-win create-debian-installer",
+    "package-mac": "electron-packager . --overwrite --asar=true --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=100Pals --version-string.FileDescription=100Pals --version-string.ProductName=\"100Pals Streamkit\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
+    "create-installer-mac": "electron-installer-dmg ./release-builds/Electron\\ tutorial\\ app-darwin-x64/Electron\\ tutorial\\ app.app electron-tutorial-app --out=release-builds --overwrite --icon=assets/icons/mac/icon.icns",
+    "create-installer-win": "node installers/windows/createinstaller.js",
+    "create-debian-installer": "electron-installer-debian --src release-builds/electron-tutorial-app-linux-x64/ --arch amd64 --config debian.json"
+  }
+}
