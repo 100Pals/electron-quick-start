@@ -11,10 +11,10 @@
     "url": "https://github.com/100Pals/streamkit"
   },
   "scripts": {
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "install-app-deps",
     "start": "npm install && electron .",
     "pack": "build --dir",
-    "dist": "build --help",
+    "dist": "build",
     "publish": "build --publish onTag"
   },
   "build": {
