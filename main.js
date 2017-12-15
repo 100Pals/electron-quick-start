@@ -1,11 +1,14 @@
 const electron = require('electron')
 // Set up autoupdater
 const autoUpdater = require("electron-updater").autoUpdater
-autoUpdater.checkForUpdatesAndNotify() // check for updates on startup
+autoUpdater.checkForUpdatesAndNotify(); // check for updates on startup
+
+//Include other libs
+const path = require('path');
+
 // Module to control application life.
 const app = electron.app
 const {ipcMain} = require('electron')
-var path = require('path')
 
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
@@ -25,7 +28,7 @@ function createWindow () {
     minHeight: 800,
     backgroundColor: '#312450',
     show: false,
-    icon: path.join(__dirname, 'assets/icons/png/64x64.png')
+    icon: path.join(__dirname, 'build/64x64.png')
   })
 
   // and load the index.html of the app.
@@ -55,7 +58,7 @@ function createWindow () {
     minHeight: 600,
     backgroundColor: '#312450',
     show: false,
-    icon: path.join(__dirname, 'assets/icons/png/64x64.png'),
+    icon: path.join(__dirname, 'build/64x64.png'),
     parent: mainWindow
   })
 
@@ -96,3 +99,36 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+var SteamApi = require('steam-api');
+
+// User Settings
+const settings = require('electron-settings');
+app.on('ready', () => {
+  // Configure defaults
+  if (!settings.has('theme')){
+    settings.set('theme', 'default');
+  }
+
+  // Update Steam API key when its changed in app
+  settings.watch('providers.steam.api_key', (newValue, oldValue) => {
+    process.env.STEAM_API_KEY = newValue;
+    console.log("Steam API Key: " + settings.get('providers.steam.api_key'));
+  });
+  
+  // User key changed? Re-roll globals
+  settings.watch('providers.steam.api_key', (newValue, oldValue) => {
+
+  });
+
+  
+   console.log("Current Theme: " + settings.get('theme'));
+   console.log("Steam API Key: " + settings.get('providers.steam.api_key'));
+   console.log("Steam API ID: " + settings.get('providers.steam.id'));
+
+   if (settings.has('providers.steam.api_key') && settings.has('providers.steam.id')){
+    const SteamApi = require('./providers/steam.js');
+    var api = new SteamApi(settings.get('providers.steam.api_key'))
+    api.User_GetPlayerSummaries(settings.get('providers.steam.id'))
+  }
+
+});
