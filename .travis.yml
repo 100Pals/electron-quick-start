@@ -17,6 +17,7 @@ node_js:
   - 8
 
 cache:
+  yarn: true
   directories:
     - node_modules
 
@@ -35,8 +36,7 @@ addons:
 
 install:
   - nvm install 8
-  - npm install electron-builder@next
-  - npm install
+  - yarn install
   - export DISPLAY=':99.0'
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 
@@ -46,4 +46,4 @@ before_script:
   - sleep 3
 
 script:
-  - npm run dist
+  - yarn run dist
