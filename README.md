@@ -1,14 +1,21 @@
 
 [![OSX/Linux Builds](https://travis-ci.org/100Pals/streamkit.svg?branch=master)](https://travis-ci.org/100Pals/streamkit)
-[![Windows status](https://ci.appveyor.com/api/projects/status/fcrfr9gimmk3ui4d?svg=true)](https://ci.appveyor.com/project/rgooler/streamkit)
+
+[![Windows status](https://ci.appveyor.com/api/projects/status/fcrfr9gimmk3ui4d?svg=true)]
+(https://ci.appveyor.com/project/rgooler/streamkit)
+
+[![CLA assistant](https://cla-assistant.io/readme/badge/100Pals/streamkit)](https://cla-assistant.io/100Pals/streamkit)
+
 
 # Setup
 
 Only if on OSX:
+
     brew cask install xquartz
     brew install fakeroot dpkg wine
 
 And then:
+
     yarn install
     yarn start
 
